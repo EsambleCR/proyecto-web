@@ -1,0 +1,20 @@
+{
+  "name": "proyecto-web",
+  "homepage": "https://github.com/EsambleCR/proyecto-web",
+  "authors": [
+    "jeremyb20 <jbaccab@ucenfotec.ac.cr>"
+  ],
+  "description": "Proyecto web universidad cenfotec",
+  "main": "app.js",
+  "keywords": [
+    "cenfotec"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
