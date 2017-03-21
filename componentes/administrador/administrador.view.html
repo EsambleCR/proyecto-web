@@ -1,0 +1,61 @@
+<div ng-cloak="" class="inputdemoErrors">
+  <div layout="row" >
+    <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="25">
+      <img src="componentes/imagenes/logoC.png" alt="logo Soft House">
+        <button class="sesion" layout-align="center end" ui-sref="administrador.carrera"> Carreras </button>
+        <button class="sesion" layout-align="center end"> Reportes</button>
+        <div class="dropdown">
+          <button class="btn sesion dropdown-toggle" type="button" data-toggle="dropdown">Editar</button>
+          <ul class="dropdown-menu">
+            <li><button class="drop" layout-align="center end"> Estudiantes</button></li>
+            <li><button class="drop" layout-align="center end"> Empresas</button></li>
+            <li><button class="drop" layout-align="center end"> Administrador</button></li>
+          </ul>
+        </div>
+    </md-sidenav>
+
+    <md-content flex>
+      <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
+        <span flex></span>
+        <div>
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Notificaciones</button>
+        </div>
+        <div>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <button  class="session" ui-sref="calendario" layout-align="center end"> Calendario</button>
+        </div>
+        <div>
+          <i class="fa fa-cog" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Opciones</button>
+        </div>
+        <div>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Hola Usuario</button>
+        </div>
+        <div>
+          <i class="fa fa-power-off" aria-hidden="true"></i>
+        <button  class="session" layout-align="center end"> Salir</button>
+        </div>
+      </md-nav-bar>
+
+
+      <input type="text" name="" value="" placeholder="Ingresar Carrera" ng-model="administradorCtrl.nombre">
+
+      <button type="button" name="button" ng-click="administradorCtrl.save()">Agregar</button>
+
+      <table>
+      <thead>
+        <th>Carrera</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="carrera in administradorCtrl.carreras">
+          <th>{{carrera.nombre}}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <div ui-view></div>
+    </md-content>
+  </div>
+</div>

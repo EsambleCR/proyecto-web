@@ -1,23 +1,10 @@
 {
-  "name": "proyecto-web",
-  "homepage": "https://github.com/EsambleCR/proyecto-web",
-  "authors": [
-    "jeremyb20 <jbaccab@ucenfotec.ac.cr>"
-  ],
-  "description": "Proyecto web universidad cenfotec",
-  "main": "app.js",
-  "keywords": [
-    "cenfotec"
-  ],
+  "name": "ejemplo",
+  "description": "este es el ejemplo",
+  "main": "",
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "homepage": "",
   "dependencies": {
-    "angular": "^1.6.3"
+    "ng-file-upload": "^12.2.13"
   }
 }
