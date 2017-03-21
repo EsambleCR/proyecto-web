@@ -1,18 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
+<html ng-app="myEnsamble">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <title>Prototipo</title>
+      <link rel="shortcut icon" type="image/x-icon" href="componentes/images/cenfo.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+      <link rel="stylesheet" href="css/estilo.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" href="css/font-awesome.css">
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+  </head>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <div ui-view></div>
+    <script src="vendor/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 
-  <title>App</title>
-  <meta name="description" content="The HTML5 Herald">
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+    <script src="app.js"></script>
+    <script src="index.route.js"></script>
+    <script src="componentes/administrador/administrador.controller.js"></script>
 
-</head>
+    <script src="componentes/administrador/administrador.service.js"></script>
+    <script src="componentes/empresa/empresa.controller.js"></script>
+    <script src="componentes/empresa/empresa.service.js"></script>
+    <script src="componentes/inicioSesion/inicioSesion.controller.js"></script>
+    <script src="componentes/inicioSesion/inicioSesion.service.js"></script>
+    <script src="componentes/inicioSesion/olvidoCont/olvidoCont.controller.js"></script>
+    <script src="componentes/inicioSesion/olvidoCont/olvidoCont.service.js"></script>
+    <script src="componentes/servicios/imagenes.service.js"></script>
+    <script src="componentes/usuario/estudiantes/solicitudEstudiante.controller.js"></script>
+    <script src="componentes/usuario/estudiantes/solicitudEstudiante.service.js"></script>
+    <script src="componentes/usuario/estudiantes/estudiantePerfil/estudiantePerfil.controller.js"></script>
+    <script src="componentes/usuario/estudiantes/estudiantePerfil/estudiantePerfil.service.js"></script>
+    <script src="componentes/usuario/estudiantes/verProyectos/verProyecto.controller.js"></script>
+    <script src="componentes/usuario/estudiantes/verProyectos/verProyecto.service.js"></script>
+    <script src="componentes/usuario/profesores/profesor.controller.js"></script>
+    <script src="componentes/usuario/profesores/profesor.service.js"></script>
+    <script src="componentes/calendario/calendario.controller.js"></script>
+    <script src="componentes/calendario/calendario.service.js"></script>
 
-<body>
-  
-</body>
+    <script src="componentes/administrador/administrador.service.js"></script>
+    <script src="componentes/inicioSesion/inicioSesion.controller.js"></script>
+    <script src="componentes/inicioSesion/inicioSesion.service.js"></script>
+    <script src="componentes/servicios/imagenes.service.js"></script>
+    <script src="componentes/empresa/empresa.controller.js"></script>
+    <script src="componentes/empresa/empresa.service.js"></script>
+    <script src="componentes/proyectos/proyectos.controller.js"></script>
+    <script src="componentes/proyectos/proyectos.service.js"></script>
+    <script src="componentes/administrador/carreras/carrera.service.js"></script>
+    <script src="componentes/administrador/carreras/carrera.controller.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <!-- python -m SimpleHTTPServer 9000   copiar en la terminal, mac linux, para crear un localhost-->
+
+  </body>
 </html>
