@@ -1,0 +1,33 @@
+<div ng-cloak="" class="inputdemoErrors" ng-app="myEnsamble">
+  <div layout="row" >
+    <md-sidenav layout-align="start center" max-height="100%" md-is-locked-open="true" class="md-whiteframe-4dp" flex="35">
+       <h2>¡here's where the entertainment starts!</h2>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque placeat, facere odio ipsa neque voluptate laborum ab porro quo quaerat quod sequi ut voluptatem soluta doloremque nulla itaque mollitia ex.</p>
+    </md-sidenav>
+
+    <md-content flex>
+
+      <form name="olvidoContForm" class="container md-pad" flex="50" id="formOlvidoCont" novalidate>
+        <h2></h2>
+
+
+        <md-input-container md-padding="20px" class="md-block">
+          <md-icon md-svg-src ='componentes/imagenes/account-outline.svg'></md-icon>
+          <label>Correo de Cenfotec:</label>
+          <input required="" name="correo" ng-model="olvidoContCtrl.correo">
+          <div ng-messages="olvidoContForm.correo.$error">
+            <div ng-message="required">Espacio requerido</div>
+            <div ui-if="errorMessage">{{errorMessage}}</div>
+          </div>
+        </md-input-container>
+
+        <div class="formActionButton container">
+          <md-button class="md-button register" ng-click="olvidoContCtrl.solicitar()" type="submit">Solicitar Nueva Contraseña</md-button>
+        </div>
+        </div>
+      </form>
+    </md-content>
+  </div>
+</div>
+<div ui-view></div>

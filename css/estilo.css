@@ -1,0 +1,648 @@
+html{
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #000;
+}
+
+
+/************************************ INICIO LANDING ****************************************************/
+
+body #landing {
+  padding-top: 96px;
+  color: #fff;
+}
+
+/* Start of Header Navigation */
+
+header .navbar{
+  border-radius: 0;
+  border: none;
+  background: #000;
+  height: 96px;
+}
+
+header .navbar-default .navbar-brand img{
+  margin-left: 66px;
+}
+
+header .navbar-default .navbar-nav a {
+  color: #fff;
+  font-size: 1.286em; /*18px*/
+}
+
+header .nav>li>a {
+  padding: 0;
+  margin: 40px 30px;
+  margin-bottom: 0;
+}
+
+header .navbar-default .navbar-nav a:hover{
+  color: #fbb803;
+}
+
+header .navbar-default .navbar-nav .active a{
+  color: #fbb803;
+  background-color: #000;
+}
+
+header .navbar-default .navbar-nav .active a:hover{
+  background-color: #000;
+  color: #fbb803;
+}
+
+header .navbar-right{
+  margin-right: 20px;
+}
+
+header .navbar-collapse {
+  background-color: #000;
+}
+
+
+header .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fbb803;
+}
+
+/* End of Header Navigation */
+
+/* Start Section Cover */
+
+#cover{
+  background-image: url("../componentes/imagenes/cover.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 690px;
+  max-width: 100%;
+}
+
+#cover .right{
+  padding: 0 60px;
+  padding-top: 70px;
+  text-align: center;
+}
+
+#cover h1{
+  color: #fff;
+  font-size: 115px;
+  padding-top: 190px;
+  padding-left: 100px;
+}
+
+#cover #monitor {
+  display:inline-block;
+  color: #fbb803;
+  font-size: 250px;
+}
+
+#cover h2{
+  font-size: 48px;
+  text-align: left;
+}
+
+#cover p{
+  text-align: left;
+}
+
+#cover .btn-primary {
+    color: #000;
+    margin-top: 60px;
+    background-color: #fbb803;
+    border-color: #fbb803;
+    border-radius: 0;
+    width: 240px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* End Section Cover */
+
+/* Start Section Nosotros */
+
+#nosotros{
+  height: 800px;
+  color: #000;
+}
+
+#nosotros h2{
+  padding: 0 40px 50px 60px;
+  padding-top: 130px;
+  font-weight: bold;
+}
+
+#nosotros p{
+  padding: 0 40px 30px 60px;
+}
+
+#nosotros .first-image{
+  padding: 120px 0 30px 0;
+}
+
+#nosotros .rigth{
+  padding: 0 45px;
+}
+
+/* End Section Nosotros */
+
+
+/* Start Section Servicios */
+#servicios{
+  background-image: url("../componentes/imagenes/cenfotec_lounge_centro.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 740px;
+  max-width: 100%;
+  color: #fff;
+}
+
+#servicios h2{
+  margin: 80px 0px 100px 0;
+  color: #fbb803;
+  font-weight: bold;
+}
+
+#servicios .servicio{
+  display: inline;
+  float: left;
+  width: 240px;
+  height: 200px;
+  text-align: center;
+  background-color: rgba(48, 46, 40, 0.8);
+  margin: 20px;
+  padding: 20px;
+}
+
+#servicios .servicio i{
+  padding-top: 10px;
+  color: #fbb803;
+}
+/* End Section Servicios */
+
+/* Start Section Solicitudes */
+
+#solicitudes{
+  height: 800px;
+}
+
+#solicitudes h2{
+  color: #000;
+  font-weight: bold;
+  margin: 80px 0;
+}
+
+#solicitudes .solicitud{
+  width: 700px;
+}
+
+#solicitudes #solicitudEstudiante{
+  background-image: url("../componentes/imagenes/cenfotec_students.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 500px;
+  padding: 80px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+#solicitudes #solicitudEmpresarial{
+  background-image: url("../componentes/imagenes/cenfotec_empresa.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 500px;
+  padding: 80px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+#solicitudes h3{
+  font-size: 40px;
+}
+
+#solicitudes .btn-primary {
+    color: #000;
+    margin-top: 60px;
+    background-color: #fbb803;
+    border-color: #fbb803;
+    border-radius: 0;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* End Section Solicitudes */
+
+
+/* Start Footer*/
+
+footer #left-side-contact{
+  background-color: #232323;
+  height: 650px;
+  padding: 80px;
+  color: #fff;
+}
+
+footer #left-side-contact div:first-child{
+  margin: 10px;
+}
+
+footer #left-side-contact div:first-child{
+  width: 60px;
+  display: inline-block;
+  float: left;
+}
+
+footer #left-side-contact div:last-child{
+  width: 500px;
+  display: inline-block;
+  float: left;
+  margin-top: 15px;
+}
+
+footer #left-side-contact h2{
+  color: #fbb803;
+  font-size: 40px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+footer #left-side-contact a{
+  color: #fff;
+}
+
+footer #left-side-contact img{
+  margin: 0;
+}
+
+footer #right-side-contact{
+  background-color: #fbb803;
+  height: 650px;
+  padding: 80px;
+}
+
+footer #right-side-contact h2{
+  color: #000;
+  font-size: 40px;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+footer #right-side-contact .social-media-contact i{
+  padding: 50px;
+  color: #000;
+}
+
+footer #right-side-contact .social-media-contact a i:hover{
+  color: #fff;
+  -webkit-transform: scale(1.2);
+}
+
+footer .copy-right{
+  height: 80px;
+  background-color: #3b3b3b;
+  color: #fff;
+}
+
+footer .copy-right p{
+  font-size: 18px;
+  margin: 0;
+  padding-top: 14px;
+  text-align: left;
+}
+
+footer .copy-right img{
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+
+footer .copy-right i{
+  color: #fbb803;
+}
+
+.no-padding{
+  padding: 0;
+  height: 80px;
+}
+
+/************************************ FIN LANDING ****************************************************/
+
+md-sidenav.md-default-theme, md-sidenav, md-sidenav.md-default-theme md-content, md-sidenav md-content {
+  /*background-image: linear-gradient(135deg, #3F51B5 0%, #667eea 100%);*/
+  background-image: linear-gradient(to top, #232323 0%, #232323 );
+  height: 100vh;
+}
+md-sidenav img{
+  margin-top:30%;
+  margin-bottom: 30px;
+}
+md-sidenav h2{
+  color:#fff;
+}
+.bg-sidenav{
+  background:url(../componentes/imagenes/estudiante.jpeg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+.bg-sidenavEmp{
+  background:url(../componentes/imagenes/empresarial.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+md-nav-bar.md-default-theme .md-nav-bar, md-nav-bar .md-nav-bar {
+  padding: 0px;
+  background-color: #232323;
+  color: #fff;
+}
+.md-nav-bar {
+    border-style: solid;
+    border-width: 0 0 1px;
+    height: 60px;
+    position: relative;
+}
+.md-input-focused label{
+  color: #000 !important;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused .md-input, md-input-container:not(.md-input-invalid).md-input-focused .md-input, md-input-container.md-default-theme:not(.md-input-invalid).md-input-resized .md-input, md-input-container:not(.md-input-invalid).md-input-resized .md-input {
+  border-color: #000;
+  margin: 5px 0;
+}
+
+md-input-container .md-input{
+  color: #000;
+}
+
+md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder, md-input-container.md-default-theme label, md-input-container label {
+  color: #000;
+}
+md-datepicker input{
+	color:#000;
+}
+md-input-container label{
+	color:#000;
+}
+md-input-container input{
+	color:#000;
+}
+md-input-container {
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  margin: 20px 0;
+  vertical-align: middle;
+}
+
+form{
+  font-size: 16px;
+  margin: 0px 30px;
+}
+#formLogin, #formRegister{
+  margin: 20px auto;
+  padding: 10px 0;
+}
+.menuFeatures{
+  display: block;
+  width: 180px;
+}
+.profilePic, .formActionButton{
+  text-align: center;
+}
+.register{
+  background-color: transparent;
+  border: 2px solid #E91E63;
+  padding: 0px 30px;
+  border-radius: 30px;
+  margin:10px;
+  color: #E91E63;
+  text-align: right;
+}
+.register:hover{
+  background-color: #E91E63;
+  transition: 0.3s ease-out;
+  color: #fff;
+  border: 2px solid #E91E63;
+}
+.session{
+  background-color: transparent;
+  padding: 10px 40px 5px 0;
+  font-size: 15px;
+  border: none;
+}
+.sesion{
+  background-color: transparent;
+  padding: 20px 30px;
+  color: #fbb803;
+  border: none;
+}
+.session:hover{
+  color: #fbb803;
+  transition: 0.3s ease-out;
+}
+.md-button.md-default-theme:not([disabled]).md-focused, .md-button:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover {
+  background-color: #E91E63;
+  transition: 0.3s ease-out;
+  color: #fff;
+}
+ table{
+  border-collapse:collapse;
+}
+table thead th {
+  background-color: #e91e63;
+  color: #fff;
+  padding: 5px 25px;
+  font-size: 16px;
+  font-weight: normal;
+  border:1px solid #fff;
+}
+
+table tbody td {
+  text-align:center;
+  padding:1%;
+  border:1px solid rgba(0, 0, 0, 0.2);
+}
+span{
+  padding: 3%;;
+  display:block;
+}
+i{
+  color:#fff;
+  padding: 8px 0px;
+  font-size:20px;
+}
+.mdi{
+  padding: 0 20px 10px 20px;
+}
+
+.mar-left{
+	margin-right:30px;
+}
+#bg-contrasenna{
+  background-image: url("componentes/imagenes/aulascenfo.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 790px;
+}
+
+/*Estilos administrador*/
+.dropdown-menu{
+  background:transparent;
+}
+.dropdown-menu ul{
+  color:#fff;
+    background:transparent;
+}
+.dropdown-menu li a{
+  color:#fff;
+  background:transparent;
+}
+.dropdown-menu>li>a:hover {
+     color: #fbb803; 
+    text-decoration: none;
+   background-color:transparent;
+}
+.drop{
+  background-color: transparent;
+  padding: 10px 30px;
+  color: #fff;
+  border: none;
+}
+.drop:hover{
+  color:#fbb803;
+}
+.btn:focus, .btn:hover {
+     color: #fbb803; 
+    text-decoration: none;
+}
+/*fin estilos administrador*/
+
+/* Incio estilos Empresa */
+
+#empresa #bg-empresa{
+  background-image: url("../componentes/imagenes/empresarial.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#empresa #bg-empresa h1{
+  color: #fff;
+  font-weight: bold;
+  padding-top: 20vh;
+}
+
+#empresa #bg-empresa p{
+  color: #fff;
+}
+
+#empresa #bg-empresa img{
+  padding-top: 15vh;
+}
+
+#empresa label{
+  padding-top: 5vh;
+}
+
+#empresa .form-control{
+  border-radius: none;
+  -webkit-appearance: none;
+}
+
+#empresa .btn-primary{
+    color: #000;
+    margin-top: 60px;
+    background-color: #fbb803;
+    border-color: #fbb803;
+    border-radius: 0;
+    width: 240px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+/* Fin estilos Empresa */
+/*inicio proyectos*/
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+     background:#fff; 
+    color:#000;
+}
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: 538px;
+}
+/*fin de proyectos*/
+
+/* Incio estilos solicitudEstudiante */
+#solicitudEstudiante #bg-solicitudEstudiante{
+  background-image: url("../componentes/imagenes/studentssignup.jpeg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+#solicitudEstudiante #bg-solicitudEstudiante h1{
+  color: #fff;
+  font-weight: bold;
+  padding-top: 20vh;
+}
+
+#solicitudEstudiante #bg-solicitudEstudiante p{
+  color: #fff;
+}
+
+#solicitudEstudiante #bg-solicitudEstudiante img{
+  padding-top: 15vh;
+}
+
+#solicitudEstudiante label{
+  padding-top: 5vh;
+}
+
+#solicitudEstudiante .form-control{
+  border-radius: none;
+  -webkit-appearance: none;
+}
+
+#solicitudEstudiante .btn-primary{
+    color: #000;
+    margin-top: 60px;
+    background-color: #fbb803;
+    border-color: #fbb803;
+    border-radius: 0;
+    width: 240px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+/* Fin estilos solicitudEstudiante */
+
+/* Incio estilos Carreras y Cursos */
+
+#carreras .btn-primary{
+  color: #000;
+  background-color: #fbb803;
+  border-color: #fbb803;
+  border-radius: 0;
+  max-width: 120px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#carreras {
+  padding: 50px;
+}
+
+
+/* Fin estilos  Carreras y Cursos */
+

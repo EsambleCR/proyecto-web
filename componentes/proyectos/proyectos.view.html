@@ -1,0 +1,147 @@
+<div ng-cloak="" class="inputdemoErrors" ng-app="myEnsamble">
+  <div layout="row" >
+    <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="25">
+      <img src="componentes/imagenes/logoC.png" alt="logo Soft House">
+        <button  class="sesion" layout-align="center end"> Proyectos</button>
+        <button  class="sesion" layout-align="center end"> Reportes</button>
+        <div class="dropdown">
+          <button class="btn sesion dropdown-toggle" type="button" data-toggle="dropdown">Editar</button>
+          <ul class="dropdown-menu">
+            <li><button class="drop" layout-align="center end"> Estudiantes</button></li>
+            <li><button class="drop" layout-align="center end"> Empresas</button></li>
+            <li><button class="drop" layout-align="center end"> Administradores</button></li>
+          </ul>
+        </div>
+    </md-sidenav>
+    <md-content flex>
+      <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
+        <span flex></span> 
+        <div>
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Notificaciones</button>
+        </div>
+        <div>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <button ui-sref="calendario" class="session" layout-align="center end"> Calendario</button>
+        </div>
+        <div>
+          <i class="fa fa-cog" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Opciones</button>
+        </div>
+        <div>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Hola Usuario</button>
+        </div>
+        <div>
+          <i class="fa fa-power-off" aria-hidden="true"></i>
+        <button  class="session" layout-align="center end"> Salir</button>
+        </div>
+      </md-nav-bar>
+      <md-toolbar>
+          <h2 class="md-toolbar-tools md-center" >
+              <span>Proyectos</span>
+          </h2>
+      </md-toolbar>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="md-pad">
+            <md-tabs>
+              <md-tab label="Proyectos Pendientes">
+               <md-content>
+                  <div class="container-fluid" ng-repeat="objProyecto  in proyectosCtrl.proyectos | filter:{estado:'pendiente'}:true">
+                    <div class="panel-group" id="accordion" >
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <h4 class="panel-title md-padd">
+                                <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" data-parent="#accordion"><span>Nombre del cliente:</span>{{objProyecto.nombre}}</a>
+                              </h4>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="col-md-3">
+                                <button ng-click="proyectosCtrl.aceptar(objProyecto)">Aceptar</button>
+                              </div>
+                              <div class="col-md-3">
+                                <button ng-click="proyectosCtrl.rechazado(objProyecto)">Rechazar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <span>Descripción:</span>
+                            <p ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">
+                              {{objProyecto.descripcion}}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  </md-content>
+              </md-tab>
+
+              <md-tab label="Proyectos aceptados">
+              <md-content>
+               <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'aceptado'}:true">
+                    <div class="panel-group" id="accordion2" >
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h4 class="panel-title md-padd">
+                                <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" id="nombreAceptado" data-parent="#accordion">{{objProyecto.nombre}}</a>
+                              </h4>
+                            </div>
+                       </div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <h2>Descripción</h2>
+                            <p ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">
+                              {{objProyecto.descripcion}}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  </md-content>
+              </md-tab>
+
+
+              
+              <md-tab label="Proyectos Rechazados">
+              <md-content>
+                <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'rechazado'}:true">
+                    <div class="panel-group" id="accordion3" >
+                      <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <h4 class="panel-title md-padd">
+                                <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}"  data-parent="#accordion">{{objProyecto.nombre}}</a>
+                              </h4>
+                            </div>
+                       </div>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                          <div class="panel-body" ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">{{objProyecto.descripcion}}</div>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  </md-content>
+              </md-tab>
+              <md-tab label="">
+             
+              </md-tab>
+          </md-tabs> 
+          </div> 
+        </div>
+      </div>
+    </md-content>
+  </div>
+</div>
+<div ui-view></div>

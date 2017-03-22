@@ -1,0 +1,53 @@
+<div class="container-fluid" id="carreras">
+  <div class="row">
+    <div class="col-md-6">
+      <form name="formularioCarrera">
+        <h1>Agregar Carrera</h1>
+
+        <div class="form-group" ng-class="{ 'has-error': formularioCarrera.nombreCarrera.$dirty && formularioCarrera.nombreCarrera.$invalid || formularioCarrera.nombreCarrera.$error.pattern, 'has-success': formularioCarrera.nombreCarrera.$valid}">
+          <label for="txtNombreCarrera" class="control-label">Nombre de la carrera:</label>
+            <input class="form-control" id="txtNombreCarrera" name="nombreCarrera" ng-model="carreraCtrl.nombre" ng-pattern="/^[a-zA-Z ]*$/" required>
+            <div ng-messages="formularioCarrera.nombreCarrera.$error">
+              <div ng-message="required" ng-show="!formularioCarrera.nombreCarrera.$pristine" class="help-block">Campo requerido</div>
+              <div ng-message="pattern" ng-show="!formularioCarrera.$pristine" class="help-block">Solo se permiten letras</div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary pull-right" ng-click="carreraCtrl.save()">Agregar</button>
+
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <form name="formularioCurso">
+        <h1>Agregar Curso</h1>
+
+        <div class="form-group" ng-class="{ 'has-error': formularioCurso.nombreCurso.$dirty && formularioCurso.nombreCurso.$invalid || formularioCurso.nombreCurso.$error.pattern, 'has-success': formularioCurso.nombreCurso.$valid}">
+          <label for="txtNombreCurso" class="control-label">Nombre del curso:</label>
+            <input class="form-control" id="nombreCurso" name="nombreCurso" ng-model="carreraCtrl.curso" ng-pattern="/^[a-zA-Z ]*$/" required>
+            <div ng-messages="formularioCurso.nombreCurso.$error">
+              <div ng-message="required" ng-show="!formularioCurso.nombreCurso.$pristine" class="help-block">Campo requerido</div>
+              <div ng-message="pattern" ng-show="!formularioCurso.$pristine" class="help-block">Solo se permiten letras</div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary pull-right">Agregar</button>
+
+      </form>
+    </div>
+  </div>
+
+  <table>
+  <thead>
+    <th>Name</th>
+    <th>ID</th>
+    <th>Alias</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="carrera in carreraCtrl.carreras">
+      <th>{{carrera.nombre}}</th>
+    </tr>
+  </tbody>
+</table>
+</div>

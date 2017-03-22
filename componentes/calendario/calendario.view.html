@@ -1,0 +1,111 @@
+<div ng-cloak="" class="inputdemoErrors" ng-app="myEnsamble">
+  <div layout="row" >
+    <md-sidenav layout-align="start center" md-is-locked-open="true"  flex="25">
+      <img src="componentes/imagenes/logoC.png" alt="logo Soft House">
+        <button  class="sesion" ui-sref="proyectos" layout-align="center end"> Proyectos</button>
+        <button  class="sesion" layout-align="center end"> Reportes</button>
+        <div class="dropdown">
+          <button class="btn sesion dropdown-toggle" type="button" data-toggle="dropdown">Editar</button>
+          <ul class="dropdown-menu">
+            <li><button class="drop" layout-align="center end"> Estudiantes</button></li>
+            <li><button class="drop" layout-align="center end"> Empresas</button></li>
+            <li><button class="drop" layout-align="center end"> Administrador</button></li>
+          </ul>
+        </div>
+    </md-sidenav>
+
+    <md-content flex>
+      <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
+        <span flex></span>
+        <div>
+          <i class="fa fa-bell-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Notificaciones</button>
+        </div>
+        <div>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Calendario</button>
+        </div>
+        <div>
+          <i class="fa fa-cog" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Opciones</button>
+        </div>
+        <div>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <button  class="session" layout-align="center end"> Hola Usuario</button>
+        </div>
+        <div>
+          <i class="fa fa-power-off" aria-hidden="true"></i>
+        <button  class="session" layout-align="center end"> Salir</button>
+        </div>
+      </md-nav-bar>
+
+
+      <md-content  flex layout="column" flex class="container">
+            <table ng-controller="calendarioController as calendarioCtrl" id="tblCalendarios">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Nombre</th>
+                  <th>Descripcion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="objTarea in calendarioCtrl.calendarios">
+                  <td class="done-{{calendarioCtrl.done}}" value="{{objTarea.fechaEntrega}}">{{objTarea.fechaEntrega | date:'MM/dd/yyyy'}}</td>
+                  <td class="done-{{calendarioCtrl.done}}" value="{{objTarea.nombre}}">{{objTarea.nombre}}</td>
+                  <td class="done-{{calendarioCtrl.done}}" value="{{objTarea.descripcion}}">{{objTarea.descripcion}}</td>
+                  <!-- <td><input type="checkbox" ng-model="checkComplete"></td> -->
+                </tr>
+              </tbody>
+            </table>
+          </md-content>
+        <form name="calendarioCtrlForm" class="container md-pad" flex="50" id="formCalendario" novalidate>
+          <h2>Crear Nueva Tarea</h2>
+
+        <md-input-container >
+          <label>Fecha de entrega:</label>
+            <md-datepicker  name="fecha de entrega" ng-model="calendarioCtrl.fechaEntrega" md-placeholder="Fecha de entrega" required></md-datepicker>
+            <div ng-messages="calendarioCtrlForm.nombre.$error">
+              <div ng-message-exp="'required'">This is required. Please select a date from the calendar!</div>
+            </div>
+        </md-input-container>
+
+          <!-- <md-input-container md-padding="20px" class="md-block">
+            <md-datepicker ng-model="calendarioCtrl.fechaEntrega" md-placeholder="Fecha de Entrega"></md-datepicker>
+            <div ng-messages="calendarioCtrlForm.correo.$error">
+              <div ng-message="required">Espacio requerido</div>
+              
+            </div>
+          </md-input-container> -->
+
+          <md-input-container md-padding="20px" class="md-block">
+            <md-icon md-svg-src ='componentes/imagenes/account-outline.svg'></md-icon>
+            <label>Nombre:</label>
+            <input required="" name="correo" ng-model="calendarioCtrl.nombre">
+            <div ng-messages="calendarioCtrlForm.nombre.$error">
+              <div ng-message="required">Espacio requerido</div>
+             
+            </div>
+          </md-input-container>
+          <md-input-container md-padding="20px" class="md-block">
+            <md-icon md-svg-src ='componentes/imagenes/account-outline.svg'></md-icon>
+            <label>Descripcion:</label>
+            <input required="" name="correo" ng-model="calendarioCtrl.descripcion">
+            <div ng-messages="calendarioCtrlForm.descripcion.$error">
+              <div ng-message="required">Espacio requerido</div>
+             
+            </div>
+          </md-input-container>
+
+          <div class="formActionButton container">
+            <md-button class="md-button register" ng-click="calendarioCtrl.save()" type="submit">Agregar nueva tarea</md-button>
+          </div>
+          </div>
+        </form>
+
+
+    </md-content>
+
+  </div>
+</div>
+<div ui-view></div>
