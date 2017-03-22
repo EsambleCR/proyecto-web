@@ -6,7 +6,7 @@
       //controlador
       var verProyectoCtrl = this; //binding del controlador con el html, solo en el controlador
         verProyectoCtrl.cloudObj = ImagenService.getConfiguration();
-        verProyectoCtrl.proyectos = proyectosService.setProyectos();
+        // verProyectoCtrl.proyectos = proyectosService.setProyectos();
         
       function init(){ // función que se llama así misma para indicar que sea lo primero que se ejecute
         verProyectoCtrl.proyectosList = verProyectoService.getVerProyecto();

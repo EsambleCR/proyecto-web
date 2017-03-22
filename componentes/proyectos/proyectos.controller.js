@@ -2,7 +2,7 @@
   angular
     .module('myEnsamble')
     .controller('proyectosController', proyectosController);
-    function proyectosController(proyectosService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function proyectosController(proyectosService,verProyectoService){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var proyectosCtrl = this; //binding del controlador con el html, solo en el controlador
 
@@ -32,7 +32,7 @@
         //console.log(pobjProyecto);
         pobjProyecto.estado = 'aceptado';
         proyectosService.setAceptado(pobjProyecto);
-        
+        // verProyectoService.setAceptado(pobjProyecto);
       }
       proyectosCtrl.rechazado = function(pobjProyecto){
         //console.log(pobjProyecto);

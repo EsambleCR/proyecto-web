@@ -48,14 +48,14 @@
             <md-tabs>
               <md-tab label="Proyectos Pendientes">
                <md-content>
-                  <div class="container-fluid" ng-repeat="objProyecto  in proyectosCtrl.proyectos | filter:{estado:'pendiente'}:true">
+                  <div class="container-fluid" ng-repeat="objProyecto  in proyectosCtrl.proyectos | filter:{estado:'pendiente'}:true track by $index">
                     <div class="panel-group" id="accordion" >
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           <div class="row">
                             <div class="col-md-6">
                               <h4 class="panel-title md-padd">
-                                <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" data-parent="#accordion"><span>Nombre del cliente:</span>{{objProyecto.nombre}}</a>
+                                <span>Nombre del cliente: <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" data-parent="#accordion"> {{objProyecto.nombre}}</a></span>         
                               </h4>
                             </div>
                             <div class="col-md-6">
@@ -70,7 +70,7 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
                           <div class="panel-body">
-                            <span>Descripción:</span>
+                            <p><small>Descripción:</small></p>
                             <p ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">
                               {{objProyecto.descripcion}}
                             </p>
@@ -84,37 +84,105 @@
 
               <md-tab label="Proyectos aceptados">
               <md-content>
-               <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'aceptado'}:true">
+                      <h3>Proyectos Activos</h3>
+              
+                <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'aceptado'}:true track by $index" >
                     <div class="panel-group" id="accordion2" >
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           <div class="row">
                             <div class="col-md-4">
-                              <h4 class="panel-title md-padd">
-                                <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" id="nombreAceptado" data-parent="#accordion">{{objProyecto.nombre}}</a>
+                              <h4 class="panel-title">
+                                <span data-toggle="collapse" data-target="#demo">Nombre del cliente: <a data-toggle="collapse" ng-model="proyectosCtrl.nombre" value="{{objProyecto.nombre}}" data-parent="#accordion"> {{objProyecto.nombre}}</a></span>  
                               </h4>
                             </div>
                        </div>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
-                          <div class="panel-body">
-                            <h2>Descripción</h2>
-                            <p ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">
-                              {{objProyecto.descripcion}}
-                            </p>
-                          </div>
+                          <md-tabs>
+                            <md-tab label="Información General">
+                              <form action="" id="calendarioCtrlForm">
+                                <div class="panel-body">
+                                <div class="row">
+                                  <p>Descripción:</p>
+                                  <p ng-model="proyectosCtrl.descripcion" value="{{objProyecto.descripcion}}">
+                                    {{objProyecto.descripcion}}
+                                  </p>
+                                </div>
+                                <div class="row">
+                                  <p>Estado:</p>
+                                  <p ng-model="proyectosCtrl.estado" value="{{objProyecto.estado}}">
+                                    {{objProyecto.estado}}
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <md-input-container class="md-block">
+                                    <label>Fecha de Inicio:</label>
+                                      <md-datepicker  name="" ng-model="proyectoCtrl.inicio" required></md-datepicker>
+                                      <div ng-messages="calendarioCtrlForm.nombre.$error">
+                                        <div ng-message-exp="'required'">Esto es requerido</div>
+                                      </div>
+                                  </md-input-container>  
+                                </div>
+                                <div class="col-md-6">
+                                  <md-input-container class="md-block">
+                                    <label>Fecha de finalización:</label>
+                                      <md-datepicker  name="" ng-model="proyecto.final" required></md-datepicker>
+                                      <div ng-messages="calendarioCtrlForm.nombre.$error">
+                                        <div ng-message-exp="'required'">Esto es requerido!</div>
+                                      </div>
+                                  </md-input-container>
+                                </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                  <label>Agregar profesor al proyecto:</label>
+                                  <select ng-model="administradorCtrl.carreraSeleccionada">
+                                    <option value="">--Seleccionar Profesor--</option>
+                                    <option value="{{carrera.nombre}}" ng-repeat="carrera in administradorCtrl.carreras">{{carrera.nombre}}</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-6">
+                                  <label>Agregar estudiante al proyecto:</label>
+                                  <select ng-model="administradorCtrl.carreraSeleccionada">
+                                    <option value="">--Seleccionar estudiante--</option>
+                                    <option value="{{carrera.nombre}}" ng-repeat="carrera in administradorCtrl.carreras">{{carrera.nombre}}</option>
+                                  </select>
+                                </div>
+                                <div class="text-center">
+                                  <div >
+                                    <button type="button" class="btn btn-primary" ng-click="proyectosCtrl.agregar()">Agregar</button>
+                                  </div>
+                                </div>
+                              </div>
+                                
+                              </div>
+                            </form>
+
+                            </md-tab>
+                            <md-tab label="Más Información">
+                              
+                            </md-tab>
+                            <md-tab label="Bitácoras">
+                              
+                            </md-tab>
+                            <md-tab label="">
+                              
+                            </md-tab>
+                          </md-tabs>    
                         </div>
                       </div>
                     </div> 
-                  </div>
-                  </md-content>
+                  </div> 
+                </md-content>
               </md-tab>
 
 
               
               <md-tab label="Proyectos Rechazados">
               <md-content>
-                <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'rechazado'}:true">
+                <div class="container-fluid" ng-repeat="objProyecto in proyectosCtrl.proyectos | filter:{estado:'rechazado'}:true track by $index">
                     <div class="panel-group" id="accordion3" >
                       <div class="panel panel-default">
                         <div class="panel-heading">
