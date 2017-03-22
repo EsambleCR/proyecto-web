@@ -48,6 +48,8 @@
       }
       localStorage.setItem('proyectosLS',JSON.stringify(listaProyectos));
     }
+
+
     
   }
 

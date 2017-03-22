@@ -4,14 +4,7 @@
       <img src="componentes/imagenes/logoC.png" alt="logo Soft House">
         <button class="sesion" layout-align="center end" ui-sref="administrador.carrera"> Carreras </button>
         <button class="sesion" layout-align="center end"> Reportes</button>
-        <div class="dropdown">
-          <button class="btn sesion dropdown-toggle" type="button" data-toggle="dropdown">Editar</button>
-          <ul class="dropdown-menu">
-            <li><button class="drop" layout-align="center end"> Estudiantes</button></li>
-            <li><button class="drop" layout-align="center end"> Empresas</button></li>
-            <li><button class="drop" layout-align="center end"> Administrador</button></li>
-          </ul>
-        </div>
+        <button class="sesion" layout-align="center end"> Editar</button>
     </md-sidenav>
 
     <md-content flex>
@@ -23,7 +16,7 @@
         </div>
         <div>
           <i class="fa fa-calendar" aria-hidden="true"></i>
-          <button  class="session" ui-sref="calendario" layout-align="center end"> Calendario</button>
+          <button  class="session" layout-align="center end"> Calendario</button>
         </div>
         <div>
           <i class="fa fa-cog" aria-hidden="true"></i>
@@ -39,18 +32,65 @@
         </div>
       </md-nav-bar>
 
-
+      <h1>Agregar Carrera</h1>
       <input type="text" name="" value="" placeholder="Ingresar Carrera" ng-model="administradorCtrl.nombre">
 
       <button type="button" name="button" ng-click="administradorCtrl.save()">Agregar</button>
 
+      <hr>
+
+      <h1>Eliminar Carrera</h1>
+
+      <select ng-model="administradorCtrl.carreraSeleccionada">
+        <option value="">--Seleccionar Carrera--</option>
+        <option value="{{carrera.nombre}}" ng-repeat="carrera in administradorCtrl.carreras">{{carrera.nombre}}</option>
+      </select>
+
+      <button type="button" name="button" ng-click="administradorCtrl.eliminar()">Eliminar</button>
+
+      <hr>
+
+      <h1>Asignar Curso</h1>
+
+      <select ng-model="administradorCtrl.carreraSeleccionadaCurso">
+        <option value="">--Seleccionar Carrera--</option>
+        <option value="{{carrera.nombre}}" ng-repeat="carrera in administradorCtrl.carreras">{{carrera.nombre}}</option>
+      </select>
+
+      <input type="text" name="" value="" placeholder="Ingrese nombre del curso" ng-model="administradorCtrl.nombreCurso">
+
+      <button type="button" name="button" ng-click="administradorCtrl.asignar()">Asignar Curso</button>
+
+      <hr>
+
+      <h1>Eliminar Curso</h1>
+
+      <select ng-model="administradorCtrl.carreraSeleccionadaCursoEliminado">
+        <option value="">--Seleccionar Carrera--</option>
+        <option value="{{carrera.nombre}}" ng-repeat="carrera in administradorCtrl.carreras">{{carrera.nombre}}</option>
+      </select>
+
+      <select ng-model="administradorCtrl.cursoSeleccionadoEliminado">
+        <option value="">--Seleccionar Curso--</option>
+        <option value="{{carrera.nombre}}" ng-repeat="curso in administradorCtrl.carreras.cursos">{{carrera.nombre}}</option>
+      </select>
+
+
+      <button type="button" name="button" ng-click="administradorCtrl.eliminarCurso()">Eliminar Curso</button>
+
+      <hr>
+
       <table>
       <thead>
         <th>Carrera</th>
+        <th>Cursos</th>
       </thead>
       <tbody>
         <tr ng-repeat="carrera in administradorCtrl.carreras">
-          <th>{{carrera.nombre}}</th>
+          <td>{{carrera.nombre}}</td>
+          <td>
+            <p ng-repeat="curso in carrera.cursos">{{curso}}</p>
+          </td>
         </tr>
       </tbody>
     </table>

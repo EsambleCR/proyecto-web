@@ -575,6 +575,9 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
      background:#fff; 
     color:#000;
 }
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: 538px;
+}
 /*fin de proyectos*/
 
 /* Incio estilos solicitudEstudiante */

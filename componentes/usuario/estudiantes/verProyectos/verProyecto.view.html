@@ -39,17 +39,157 @@
         <button  class="session" layout-align="center end"> Salir</button>
         </div>
       </md-nav-bar>
-
-      <div class="container-fluid">
-        <h2>Buenos dias,Usuario</h2>
+      <md-toolbar class="md-toolbar-tools md-center">
+          <div class="container-fluid">
+            <h2>
+              <h2>Buenos dias,<span ng-repeat="alumno in estudiantes | limitTo:1">{{alumno.estudiantes}}</span></h2>
+            </h2>
+          </div>
+      </md-toolbar>
+      <md-content>
         <h3>Proyectos Activos</h3>
-        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-        <div id="demo" class="collapse">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </div>
-      </div>
+          <div class="container-fluid">           
+            <div class="row">
+              <button type="button" ng-repeat="objProyecto in verProyectoCtrl.proyectos" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+               <div id="demo" class="collapse col-md-12">
+                <md-tabs>
+                  <md-tab label="Información General">
+                   <form class="md-padd" name="formularioEmpresarial">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.nombreEmpresa.$dirty && formularioEmpresarial.nombreEmpresa.$invalid || formularioEmpresarial.nombreEmpresa.$error.pattern, 'has-success': formularioEmpresarial.nombreEmpresa.$valid}">
+                          <label for="txtNombreCliente" class="control-label">Cliente:</label>
+                            <input class="form-control" id="txtNombreCliente" name="nombreEmpresa" ng-model="verProyectoCtrl.nombre" value="{{objProyecto.nombre}} ng-pattern="/^[a-zA-Z ]*$/" required>
+                            <div ng-messages="formularioEmpresarial.nombreEmpresa.$error">
+                              <div ng-message="required" ng-show="!formularioEmpresarial.nombreEmpresa.$pristine || formularioEmpresarial.nombreEmpresa.$submitted" class="help-block">Campo requerido</div>
+                              <div ng-message="pattern" ng-show="!formularioEmpresarial.nombreEmpresa.$pristine" class="help-block">Solo se permiten letras</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.nombreContacto.$dirty && formularioEmpresarial.nombreContacto.$invalid || formularioEmpresarial.nombreContacto.$error.pattern, 'has-success': formularioEmpresarial.nombreContacto.$valid}">
+                          <label for="txtNombreContacto" class="control-label">Descripción:</label>
+                            <input class="form-control" id="txtNombreContacto" name="nombreContacto" ng-model="verProyectoCtrl.descripcion" ng-pattern="/^[a-zA-Z ]*$/" required>
+                            <div ng-messages="formularioEmpresarial.nombreContacto.$error">
+                              <div ng-message="required" ng-show="!formularioEmpresarial.nombreContacto.$pristine" class="help-block">Campo requerido</div>
+                              <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Solo se permiten letras</div>
+                            </div>
+                        </div>
+                        </div>
+                            <div class="col-md-6">
+                              <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.emailContacto.$dirty && formularioEmpresarial.emailContacto.$invalid || formularioEmpresarial.emailContacto.$error.pattern, 'has-success': formularioEmpresarial.emailContacto.$valid}">
+                              <label for="txtEmailContacto" class="control-label">Correo de contacto:</label>
+                                <input class="form-control" id="txtEmailContacto" name="emailContacto" ng-model="empresaCtrl.emailContacto" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required>
+                            <div ng-messages="formularioEmpresarial.emailContacto.$error">
+                              <div ng-message="required" ng-show="!formularioEmpresarial.emailContacto.$pristine" class="help-block">Campo requerido</div>
+                              <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Correo inválido</div>
+                            </div>
+                          </div>
+                         </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.telefonoContacto.$dirty && formularioEmpresarial.telefonoContacto.$invalid || formularioEmpresarial.telefonoContacto.$error.pattern, 'has-success': formularioEmpresarial.telefonoContacto.$valid}">
+                                <label for="txtTelefonoContacto" class="control-label">Teléfono de contacto:</label>
+                                  <input class="form-control" id="txtTelefonoContacto" name="telefonoContacto" ng-model="empresaCtrl.telefonoContacto" ng-pattern="/^[0-9]*$/" required>
+                                  <div ng-messages="formularioEmpresarial.telefonoContacto.$error">
+                                    <div ng-message="required" ng-show="!formularioEmpresarial.telefonoContacto.$pristine" class="help-block">Campo requerido</div>
+                                    <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Solo se permiten números</div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.descripcion.$dirty && formularioEmpresarial.descripcion.$invalid || formularioEmpresarial.descripcion.$error.pattern, 'has-success': formularioEmpresarial.descripcion.$valid}">
+                              <label for="txtEmailContacto" class="control-label">Integrantes puta proyecto:</label>
+                                <textarea style="min-height:40px; max-height:70px;" class="form-control" id="txtEmailContacto" name="descripcion" ng-model="empresaCtrl.descripcion" required></textarea>
+                            <div ng-messages="formularioEmpresarial.descripcion.$error">
+                              <div ng-message="required" ng-show="!formularioEmpresarial.descripcion.$pristine" class="help-block">Campo requerido</div>
+                              <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Campo inválido</div>
+                            </div>
+                          <button type="button" class="btn btn-primary" ng-click="empresaCtrl.save()">Enviar</button>
+                        </div>
+                    </form>
+                  </md-tab>
+
+
+                  <md-tab label="Más Información">
+                    <div class="container-fluid">
+                      <form action="" name="formularioEmpresarial">
+
+                      <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.telefonoContacto.$dirty && formularioEmpresarial.telefonoContacto.$invalid || formularioEmpresarial.telefonoContacto.$error.pattern, 'has-success': formularioEmpresarial.telefonoContacto.$valid}">
+                              <label for="txtTelefonoContacto" class="control-label">Costo:</label>
+                                <input class="form-control" id="txtTelefonoContacto" name="telefonoContacto" ng-model="empresaCtrl.telefonoContacto" ng-pattern="/^[0-9]*$/" required>
+                                <div ng-messages="formularioEmpresarial.telefonoContacto.$error">
+                                  <div ng-message="required" ng-show="!formularioEmpresarial.telefonoContacto.$pristine" class="help-block">Campo requerido</div>
+                                  <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Solo se permiten números</div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.industria.$dirty && formularioEmpresarial.industria.$invalid || formularioEmpresarial.industria.$error.pattern, 'has-success': formularioEmpresarial.industria.$valid}">
+                            <label for="txtIndustria" class="control-label">Industria:</label>
+                            <select id="txtIndustria" ng-model="empresaCtrl.industria">
+                              <option value="Industria pesada">Industria pesada</option>
+                            </select>
+
+                              <div ng-messages="formularioEmpresarial.industria.$error">
+                                <div ng-message="required" ng-show="!formularioEmpresarial.industria.$pristine
+                                || formularioEmpresarial.industria.$submitted" class="help-block">Campo requerido</div>
+                                <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Solo se permiten números</div>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group" ng-class="{ 'has-error': formularioEmpresarial.descripcion.$dirty && formularioEmpresarial.descripcion.$invalid || formularioEmpresarial.descripcion.$error.pattern, 'has-success': formularioEmpresarial.descripcion.$valid}">
+                            <label for="txtEmailContacto" class="control-label">Descripción del proyecto:</label>
+                            <textarea style="min-height:40px; max-height:70px;" class="form-control" id="txtEmailContacto" name="descripcion" ng-model="empresaCtrl.descripcion" required></textarea>
+                            <div ng-messages="formularioEmpresarial.descripcion.$error">
+                              <div ng-message="required" ng-show="!formularioEmpresarial.descripcion.$pristine" class="help-block">Campo requerido</div>
+                              <div ng-message="pattern" ng-show="!formularioEmpresarial.$pristine" class="help-block">Campo inválido</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="row text-center">
+                            <button type="button" class="btn btn-primary " ng-click="empresaCtrl.save()">Guardar cambios</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+                  </md-tab>
+                  <md-tab label="Bitácoras">
+                    
+                  </md-tab>
+                  <md-tab label="">
+                    
+                  </md-tab>
+                </md-tabs>
+              </div>
+            </div>           
+          </div>
+      </md-content>
+      
+
+     
     </md-content>
   </div>
 </div>
