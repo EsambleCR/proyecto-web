@@ -452,7 +452,7 @@ form{
   transition: 0.3s ease-out;
   color: #fff;
 }
- table{
+ /*table{
   border-collapse:collapse;
 }
 table thead th {
@@ -468,7 +468,7 @@ table tbody td {
   text-align:center;
   padding:1%;
   border:1px solid rgba(0, 0, 0, 0.2);
-}
+}*/
 span{
   padding: 3%;;
   display:block;
@@ -580,6 +580,9 @@ md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
 }
 .fixed{
   position:fixed;
+}
+.md-pad{
+  padding:20px;
 }
 /*fin de proyectos*/
 

@@ -16,7 +16,7 @@
 
     <md-content flex>
       <md-nav-bar aria-label="nav-bar" class="md-whiteframe-4dp left" flex>
-        <span flex></span> 
+        <span flex></span>
         <div>
           <i class="fa fa-bell-o" aria-hidden="true"></i>
           <button  class="session" layout-align="center end"> Notificaciones</button>
@@ -40,14 +40,12 @@
       </md-nav-bar>
 
       <div class="container-fluid">
-          <h2>Buenos dias,<span ng-repeat="alumno in estudiantes | limitTo:1">{{alumno.estudiantes}}</span></h2>
+        <h2>Buenos dias,<span ng-repeat="alumno in estudiantes | limitTo:1">{{alumno.estudiantes}}</span></h2>
         <h3>Proyectos Activos</h3>
-        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-        <div id="demo" class="collapse">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </div>
+        <a data-toggle="collapse" ng-model="estudianteCtrl.nombre" value="{{solEstudiante.nombre}}" data-parent="#accordion">{{solEstudiante.nombre}}</a>
+          <p>agregar informacion</p>
+      </div>
+      </div>
       </div>
     </md-content>
   </div>

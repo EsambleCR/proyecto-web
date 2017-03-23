@@ -2,7 +2,7 @@
   angular
     .module('myEnsamble')
     .controller('proyectosController', proyectosController);
-    function proyectosController(proyectosService,verProyectoService){ //se inyecta el service userService en el controlador para que se tenga acceso
+    function proyectosController(proyectosService){ //se inyecta el service userService en el controlador para que se tenga acceso
       //controlador
       var proyectosCtrl = this; //binding del controlador con el html, solo en el controlador
 
@@ -37,8 +37,13 @@
       proyectosCtrl.rechazado = function(pobjProyecto){
         //console.log(pobjProyecto);
         pobjProyecto.estado = 'rechazado';
-        proyectosService.setRechazado(pobjProyecto);
-        
+        proyectosService.setRechazado(pobjProyecto);     
+      }
+      proyectosCtrl.guardarCambios = function(){
+        var newBitacora = {
+          inicio : proyectosCtrl.inicio,
+          
+        }
       }
     }
      //se establece un objeto de angular normal
