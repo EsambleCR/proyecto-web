@@ -43,11 +43,17 @@
       controller: 'inicioSesionController',
       controllerAs: 'inicioSesionCtrl'
     })
-    .state('estudiante',{
-      url: '/estudiante',
+    .state('solicitudEstudiante',{
+      url: '/solicitudEstudiante',
       templateUrl: 'componentes/usuario/estudiantes/solicitudEstudiante.view.html',
       controller: 'solicitudEstudianteController',
       controllerAs: 'solicitudEstudianteCtrl'
+    })
+    .state('estadoEstudiante',{
+      url: '/estadoEstudiante',
+      templateUrl: 'componentes/usuario/estudiantes/estadoEstudiante.view.html',
+      controller: 'estadoEstudianteController',
+      controllerAs: 'estadoEstudianteCtrl'
     })
     .state('estudiantePerfil',{
       url: '/estudiantePerfil',
@@ -60,12 +66,6 @@
       templateUrl: 'componentes/usuario/profesores/profesorPerfil/profesorPerfil.view.html',
       controller: 'profesorController',
       controllerAs: 'profesorCtrl'
-    })
-     .state('verProyecto',{
-      url: '/verProyecto',
-      templateUrl: 'componentes/usuario/estudiantes/verProyectos/verProyecto.view.html',
-      controller: 'verProyectoController',
-      controllerAs: 'verProyectoCtrl'
     })
     .state('olvidoCont',{
      url: '/olvidoCont',

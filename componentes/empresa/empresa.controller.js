@@ -23,6 +23,7 @@
           estado : 'pendiente'
         }
         proyectosService.setProyectos(newProyecto);
+        alert('Empresa Guardada');
       }
     }
      //se establece un objeto de angular normal
