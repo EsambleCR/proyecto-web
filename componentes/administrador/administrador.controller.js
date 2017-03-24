@@ -11,13 +11,27 @@
       }init();
 
       administradorCtrl.save = function (){
-        var newCarrera = {
-          nombre: administradorCtrl.nombre
-
+        var nuevaCarrera = {
+          nombre: administradorCtrl.nombre,
+          cursos: []
         }
-        administradorService.setCarreras(newCarrera);
-        console.log(newCarrera);
+        administradorService.setCarreras(nuevaCarrera);
+        console.log(nuevaCarrera);
       }
+
+      administradorCtrl.eliminar = function (){
+        var carreraSeleccionada = administradorService.getCarreraID(administradorCtrl.carreraSeleccionada);
+        administradorService.eliminarCarrera(carreraSeleccionada);
+      }
+
+      administradorCtrl.asignar = function () {
+        var carreraSeleccionada = administradorService.getCarreraID(administradorCtrl.carreraSeleccionadaCurso);
+        alert(carreraSeleccionada);
+        administradorService.asignarCurso(administradorCtrl.nombreCurso, carreraSeleccionada);
+        alert('Agregado');
+      }
+
+
 
 
     }

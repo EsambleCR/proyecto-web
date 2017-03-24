@@ -32,13 +32,18 @@
         //console.log(pobjProyecto);
         pobjProyecto.estado = 'aceptado';
         proyectosService.setAceptado(pobjProyecto);
-        
+        // verProyectoService.setAceptado(pobjProyecto);
       }
       proyectosCtrl.rechazado = function(pobjProyecto){
         //console.log(pobjProyecto);
         pobjProyecto.estado = 'rechazado';
-        proyectosService.setRechazado(pobjProyecto);
-        
+        proyectosService.setRechazado(pobjProyecto);     
+      }
+      proyectosCtrl.guardarCambios = function(){
+        var newBitacora = {
+          inicio : proyectosCtrl.inicio,
+          
+        }
       }
     }
      //se establece un objeto de angular normal
